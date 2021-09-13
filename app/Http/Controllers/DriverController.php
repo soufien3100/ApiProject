@@ -27,7 +27,7 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -36,9 +36,19 @@ class DriverController extends Controller
      * @param  \App\Models\Driver  $driver
      * @return \Illuminate\Http\Response
      */
-    public function show(Driver $driver)
+    public function show($id) //Driver non typer un model 
     {
-        //
+
+         $driver = Driver::find($id);
+
+        return Response($driver);
+            if($driver) {
+                return = Response($driver);
+            }
+            return response()->json(data:'Driver not found',status:404); 
+            
+        //ou $driver = new Driver()
+        //$driver->findOrFail('toto'));
     }
 
     /**
