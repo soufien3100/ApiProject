@@ -10,6 +10,8 @@ class Driver extends Model
     use HasFactory;
     protected $primaryKey = 'driverId' ; 
 
+    protected $hidden = ['created_at','update_at'] ; 
+
     public function createDriver($data) {
 
         $driver =new Driver();
@@ -28,5 +30,5 @@ class Driver extends Model
        
         $this->save(); 
     }
-
+    
 }
