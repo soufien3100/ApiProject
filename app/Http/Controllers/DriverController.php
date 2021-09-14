@@ -25,9 +25,14 @@ class DriverController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
-    {
-        
+    { 
+        //dd($request->input('surname'));
+        $driver = new Driver() ; //creer une nouvelle instance 
+        $driver->createDriver($request->all()); // la fontion est le model 
+
+        return response()->json($driver,201); //retourner un format json  //status 201 
     }
 
     /**
@@ -40,12 +45,10 @@ class DriverController extends Controller
     {
 
          $driver = Driver::find($id);
-
-        return Response($driver);
             if($driver) {
-                return = Response($driver);
+                return  Response($driver);
             }
-            return response()->json(data:'Driver not found',status:404); 
+            return response()->json('Driver not found',404); 
             
         //ou $driver = new Driver()
         //$driver->findOrFail('toto'));
@@ -60,7 +63,9 @@ class DriverController extends Controller
      */
     public function update(Request $request, Driver $driver)
     {
-        //
+        $driver->updateDriver($request->all());
+
+        return response()->json($driver,200);
     }
 
     /**
