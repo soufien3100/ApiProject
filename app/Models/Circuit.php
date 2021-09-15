@@ -18,4 +18,11 @@ class Circuit extends Model
 
         $this->save();
     }
+
+    public function updateCircuit($data) {
+        
+        $this->circuitRef = $data['circuitRef'];
+
+        $this->save();
+    }
 }

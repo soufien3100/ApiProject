@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CircuitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\http\controllers\DriverController;
@@ -23,3 +24,6 @@ Route::apiResources([
      'drivers' => DriverController::class   // fixer un api par une route 
     ]);
 
+Route::apiResources([
+    'circuits' => CircuitController::class
+]);
