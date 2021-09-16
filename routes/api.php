@@ -2,7 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\http\controllers\ResultController;
 use App\http\controllers\DriverController;
+use App\http\controllers\ConstructorsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResources([
-     'drivers' => DriverController::class   // fixer un api par une route 
+     'drivers' => DriverController::class,   // fixer un api par une route 
+     'results' => ResultController::class,
+     'constructors' => ConstructorController::class
     ]);
+
 
