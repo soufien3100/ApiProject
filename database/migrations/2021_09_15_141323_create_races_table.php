@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateRacesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('races', function (Blueprint $table) {
@@ -25,12 +20,6 @@ class CreateRacesTable extends Migration
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('races');

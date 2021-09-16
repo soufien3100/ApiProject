@@ -49,7 +49,7 @@ class RaceController extends Controller
      * @param  \App\Models\Race  $race
      * @return \Illuminate\Http\Response
      */
-    public function show(Race $race)
+    public function show($id)
     {
         $race = Race::find($id);
         if($race) {
