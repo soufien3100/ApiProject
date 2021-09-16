@@ -30,8 +30,11 @@ class CircuitController extends Controller
     public function show($id)
     {
         $circuit = Circuit::find($id);
-
-        return Response($circuit, 200);
+        if ($circuit) {
+            return response($circuit);
+        }
+        
+        return response()->json('Circuit not found', '404');
     }
 
     public function update(Request $request, Circuit $circuit)

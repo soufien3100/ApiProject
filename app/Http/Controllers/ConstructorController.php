@@ -24,8 +24,11 @@ class ConstructorController extends Controller
     public function show($id)
     {
         $constructor = Constructor::find($id);
-
-        return Response($constructor, 200);
+        if ($constructor) {
+            return response($constructor);
+        }
+        
+        return response()->json('Constructor not found', '404');
     }
 
     public function update(Request $request, Constructor $constructor)
