@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\CircuitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\http\controllers\DriverController;
+use App\Http\Controllers\CircuitController;
+use App\Http\Controllers\ConstructorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResources([
-     'drivers' => DriverController::class   // fixer un api par une route 
+     'drivers' => DriverController::class
     ]);
 
 Route::apiResources([
     'circuits' => CircuitController::class
+]);
+
+Route::apiResources([
+    'constructors' => ConstructorController::class
 ]);

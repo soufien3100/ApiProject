@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\DriverSeeder;
 use Database\Seeders\CircuitSeeder;
+use Database\Seeders\ConstructorSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,7 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             //DriverSeeder::class,
-            CircuitSeeder::class
+            //CircuitSeeder::class,
+            ConstructorSeeder::class
         ]);
     }
 }
