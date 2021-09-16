@@ -53,7 +53,8 @@ class RaceController extends Controller
     {
         $race = Race::find($id);
         if($race) {
-            return new RaceResource($race);
+            return response($race);
+            //return new RaceResource($race);
         }
         return response()->json('Racer not found',404); 
     }
@@ -64,10 +65,7 @@ class RaceController extends Controller
      * @param  \App\Models\Race  $race
      * @return \Illuminate\Http\Response
      */
-    public function edit(Race $race)
-    {
-        //
-    }
+    
 
     /**
      * Update the specified resource in storage.
@@ -78,7 +76,9 @@ class RaceController extends Controller
      */
     public function update(Request $request, Race $race)
     {
-        //
+        $race->updateDriver($request->all());
+
+        return response()->json($race,200);
     }
 
     /**
@@ -89,6 +89,7 @@ class RaceController extends Controller
      */
     public function destroy(Race $race)
     {
-        //
+        $race->delete();
+        return response()->json('race deleted',204);
     }
 }
