@@ -19,7 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResources([
+Route::resources([
      'drivers' => DriverController::class   // fixer un api par une route 
     ]);
 
+// Route::get('test', function () {
+//     return "salut";
+// });
