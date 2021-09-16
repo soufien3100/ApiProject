@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Race;
 use Illuminate\Http\Request;
+use App\Http\Resources\RaceResource;
 
 
 
@@ -37,7 +38,9 @@ class RaceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $race = new Race() ; //creer une nouvelle instance 
+        $race->createRace($request->all()); // la fontion est le model 
+        return response()->json($race,201);
     }
 
     /**
@@ -48,7 +51,11 @@ class RaceController extends Controller
      */
     public function show(Race $race)
     {
-        //
+        $race = Race::find($id);
+        if($race) {
+            return new RaceResource($race);
+        }
+        return response()->json('Racer not found',404); 
     }
 
     /**
