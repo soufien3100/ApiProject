@@ -10,6 +10,8 @@ class Circuit extends Model
     use HasFactory;
     protected $primaryKey = 'circuitId' ;
 
+    protected $hidden = ['created_at', 'updated_at'];
+
     public function createCircuit($data) {
 
         $this->circuitRef = $data['circuitRef'];
@@ -50,33 +52,23 @@ class Circuit extends Model
             $this->name = $data['name'];
         }
 
-        if (isset($data['location'])) {
-            $this->location = $data['location'];
-        } else if (is_null($data['location'])) {
+        if (array_key_exists('location', $data)) {
             $this->location = $data['location'];
         }
 
-        if (isset($data['country'])) {
-            $this->country = $data['country'];
-        } else if (is_null($data['country'])) {
+        if (array_key_exists('country', $data)) {
             $this->location = $data['country'];
         }
 
-        if (isset($data['lat'])) {
-            $this->lat = $data['lat'];
-        } else if (is_null($data['lat'])) {
+        if (array_key_exists('lat', $data)) {
             $this->location = $data['lat'];
         }
 
-        if (isset($data['lng'])) {
-            $this->lng = $data['lng'];
-        } else if (is_null($data['lng'])) {
+        if (array_key_exists('lng', $data)) {
             $this->location = $data['lng'];
         }
 
-        if (isset($data['alt'])) {
-            $this->alt = $data['alt'];
-        } else if (is_null($data['alt'])) {
+        if (array_key_exists('alt', $data)) {
             $this->location = $data['alt'];
         }
 

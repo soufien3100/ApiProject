@@ -15,7 +15,7 @@ class CircuitController extends Controller
 
     public function index()
     {
-        return Response(Circuit::all());
+        return Response(Circuit::all(), 200);
     }
 
     public function store(Request $request)
@@ -31,7 +31,7 @@ class CircuitController extends Controller
     {
         $circuit = Circuit::find($id);
 
-        return Response($circuit);
+        return Response($circuit, 200);
     }
 
     public function update(Request $request, Circuit $circuit)

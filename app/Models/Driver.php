@@ -23,6 +23,7 @@ class Driver extends Model
        
         $this->save();
     }
+    
     public function updateDriver($data) {
         $this->driverRef = $data['driverRef'];
         $this->surname = $data['surname'];
