@@ -11,14 +11,17 @@ use App\Http\Resources\DriverResource;
 
 class DriverController extends Controller
 {
-    public function index(){
-        return Response(Driver::all());
+    public function index()
+    {
+        return Response(Driver::paginate(50));
     }
-    public function store(Request $request){ 
-        //dd($request->input('surname'));
-        $driver = new Driver() ; //creer une nouvelle instance 
-        $driver->createDriver($request->all()); // la fontion est le model 
-        return response()->json($driver,201); //retourner un format json  //status 201 
+
+    public function store(Request $request)
+    { 
+        $driver = new Driver();
+        $driver->createDriver($request->all()); 
+
+        return response()->json($driver,201);
     }
     public function show($id) {
          $driver = Driver::find($id);
@@ -30,11 +33,22 @@ class DriverController extends Controller
         //ou $driver = new Driver()
         //$driver->findOrFail('toto'));
     }
-    public function update(Request $request, Driver $driver){
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Driver  $driver
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Driver $driver)
+    {
         $driver->updateDriver($request->all());
         return response()->json($driver,200);
     }
-    public function destroy(Driver $driver){
+
+    public function destroy(Driver $driver)
+    {
         $driver->delete();
         return response()->json('driver deleted',204);
     }
