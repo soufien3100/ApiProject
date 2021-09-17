@@ -50,3 +50,17 @@ php artisan serve
 *afin de lancer un serveur en local.*
 
 *Se connecter au serveur local en utilisant 'localhost' ou l'adresse afficher sur le terminal.*
+
+**Utilisation de l'API**
+
+*Pour utiliser l'API, faire une recherche sous la forme*
+
+*http://127.0.0.1:8000/api/{table}*
+
+*ou 'table' peut prendre*
+    *drivers*
+    *circuits*
+    *constructors*
+    *races*
+
+*Vous recevrez une réponse sous forme d'un fichier JSON.*
