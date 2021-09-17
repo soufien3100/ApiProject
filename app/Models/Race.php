@@ -12,7 +12,7 @@ class Race extends Model
 
     protected $hidden = ['created_at','update_at'] ; 
 
-    public function createCircuit($data) {
+    public function createRace($data) {
         $this->year = $data['year'];
         $this->round = $data['round'];
         $this->circuitId = $data['circuitId'];
@@ -30,7 +30,7 @@ class Race extends Model
         $this->save();
     }
 
-    public function updateCircuit($data) {
+    public function updateRace($data) {
         
         if (isset($data['year'])) {
             $this->year = $data['year'];
