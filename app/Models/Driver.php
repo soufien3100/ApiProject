@@ -12,8 +12,9 @@ class Driver extends Model
 
     protected $hidden = ['created_at','update_at'];
 
-    public function createDriver($data) {
+    protected $allowedFilteringParameters = ['forename', 'surname'];
 
+    public function createDriver($data) {
         $driver =new Driver();
 
         $this->driverRef = $data['driverRef'];
@@ -38,7 +39,6 @@ class Driver extends Model
         }
 
         $this->url = $data['url'];
-       
         $this->save();
     }
     

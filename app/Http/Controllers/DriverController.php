@@ -25,8 +25,11 @@ class DriverController extends Controller
     public function show($id)
     {
         $driver = Driver::find($id);
-
-        return response($driver, 200);
+        if ($driver) {
+            return response($driver);
+        }
+        
+        return response()->json('Driver not found', '404');
     }
 
     public function update(Request $request, Driver $driver)
@@ -41,4 +44,8 @@ class DriverController extends Controller
         return response()->json('Driver deleted,204');
     }
 }
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 806cbf4d3109aedb10cdf059adeb8f29a9e45089
