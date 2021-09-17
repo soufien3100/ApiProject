@@ -13,7 +13,7 @@ class DriverController extends Controller
 {
     public function index()
     {
-        return Response(Driver::all());
+        return Response(Driver::paginate(50));
     }
 
     public function store(Request $request)

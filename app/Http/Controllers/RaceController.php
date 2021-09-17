@@ -9,7 +9,7 @@ class RaceController extends Controller
 {
     public function index()
     {
-        return Response(Race::all(), 200);
+        return Response(Race::paginate(50), 200);
     }
 
     public function store(Request $request)

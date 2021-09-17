@@ -15,7 +15,7 @@ class CircuitController extends Controller
 
     public function index()
     {
-        return Response(Circuit::all(), 200);
+        return Response(Circuit::paginate(50), 200);
     }
 
     public function store(Request $request)

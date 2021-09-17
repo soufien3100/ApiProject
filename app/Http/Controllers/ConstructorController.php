@@ -9,7 +9,7 @@ class ConstructorController extends Controller
 {
     public function index()
     {
-        return Response(Constructor::all(), 200);
+        return Response(Constructor::paginate(50), 200);
     }
 
     public function store(Request $request)
