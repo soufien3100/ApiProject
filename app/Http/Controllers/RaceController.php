@@ -13,11 +13,7 @@ class RaceController extends Controller
     public function index(){
         return Response(Race::all());
     }
-
-    public function create(){
-        //
-    }
-
+    
     public function store(Request $request){
         $race = new Race() ; //creer une nouvelle instance 
         $race->createRace($request->all()); // la fontion est le model 
