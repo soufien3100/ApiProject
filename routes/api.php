@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\http\controllers\ResultController;
 use App\http\controllers\DriverController;
 use App\Http\Controllers\CircuitController;
 use App\Http\Controllers\ConstructorController;
@@ -31,8 +32,8 @@ Route::apiResources([
     'drivers' => DriverController::class,
     'circuits' => CircuitController::class,
     'constructors' => ConstructorController::class,
-    'races' => RaceController::class,
-    
+    'results' => ResultController::class,
+    'races' => RaceController::class
 ]);
 
 
