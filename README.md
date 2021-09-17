@@ -57,7 +57,7 @@ php artisan serve
 
 *http://127.0.0.1:8000/api/{table}*
 
-*ou 'table' peut prendre
+*ou 'table' peut prendre*
     *drivers
     *circuits
     *constructors
