@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\DriverResource;
 use App\Models\Driver;
 use Illuminate\Http\Request;
-use \Illuminate\Http\Response;
-use App\Http\Resources;
-use App\Http\Resources\DriverResource;
-
 
 class DriverController extends Controller
 {
     public function index()
+    
     {
         return Response(Driver::paginate(50));
     }
@@ -34,13 +32,13 @@ class DriverController extends Controller
     public function update(Request $request, Driver $driver)
     {
         $driver->updateDriver($request->all());
-
         return response()->json($driver,200);
     }
 
     public function destroy(Driver $driver)
     {
         $driver->delete();
-        return response()->json('driver deleted',204);
+        return response()->json('Driver deleted,204');
     }
 }
+ 

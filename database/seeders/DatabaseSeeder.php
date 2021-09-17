@@ -16,11 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // \App\Models\User::factory(10)->create();
         $this->call([
-            //DriverSeeder::class,
-            //CircuitSeeder::class,
-            //ConstructorSeeder::class,
-            RaceSeeder::class
+            DriverSeeder::class,
+            CircuitSeeder::class,
+            ConstructorSeeder::class,
+            RaceSeeder::class,
+            ResultSeeder::class
         ]);
     } 
 }
