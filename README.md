@@ -57,10 +57,10 @@ php artisan serve
 
 *http://127.0.0.1:8000/api/{table}*
 
-*ou 'table' peut prendre*
-    *drivers*
-    *circuits*
-    *constructors*
-    *races*
+*ou 'table' peut prendre
+    *drivers
+    *circuits
+    *constructors
+    *races
 
 *Vous recevrez une réponse sous forme d'un fichier JSON.*
