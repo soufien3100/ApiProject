@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             //DriverSeeder::class,
             //CircuitSeeder::class,
-            ConstructorSeeder::class
+            //ConstructorSeeder::class,
+            RaceSeeder::class
         ]);
-    }
+    } 
 }

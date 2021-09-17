@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\http\controllers\DriverController;
 use App\Http\Controllers\CircuitController;
 use App\Http\Controllers\ConstructorController;
+use App\http\controllers\RaceController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResources([
-     'drivers' => DriverController::class
-    ]);
-
-Route::apiResources([
-    'circuits' => CircuitController::class
-]);
-
-Route::apiResources([
-    'constructors' => ConstructorController::class
+    'drivers' => DriverController::class,
+    'circuits' => CircuitController::class,
+    'constructors' => ConstructorController::class,
+    'races' => RaceController::class
 ]);
