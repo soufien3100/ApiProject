@@ -8,6 +8,7 @@ use App\Http\Controllers\ConstructorController;
 use App\http\controllers\RaceController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,9 +25,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('drivers/search/{forename}',[DriverController::class,'search']);
+
 Route::apiResources([
     'drivers' => DriverController::class,
     'circuits' => CircuitController::class,
     'constructors' => ConstructorController::class,
-    'races' => RaceController::class
+    'races' => RaceController::class,
+    
 ]);
+
+

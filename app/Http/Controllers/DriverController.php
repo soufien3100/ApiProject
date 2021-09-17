@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use \Illuminate\Http\Response;
 use App\Http\Resources;
 use App\Http\Resources\DriverResource;
-
+use Prophecy\Doubler\Generator\Node\ReturnTypeNode;
 
 class DriverController extends Controller
 {
@@ -45,5 +45,8 @@ class DriverController extends Controller
         $driver->delete();
         return response()->json('driver deleted',204);
     }
-}
 
+    public function search($forename) {
+        return Driver::where('forename', 'LIKE', '%' .$forename.'%')->get();
+    }
+}
