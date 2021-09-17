@@ -15,7 +15,6 @@ class Driver extends Model
     protected $allowedFilteringParameters = ['forename', 'surname'];
 
     public function createDriver($data) {
-
         $driver =new Driver();
 
         $this->driverRef = $data['driverRef'];
@@ -40,7 +39,6 @@ class Driver extends Model
         }
 
         $this->url = $data['url'];
-       
         $this->save();
     }
     

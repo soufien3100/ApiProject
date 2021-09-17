@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class DriverSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $path = base_path("database/data/drivers.sql");

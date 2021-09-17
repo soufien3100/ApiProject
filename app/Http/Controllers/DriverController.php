@@ -37,7 +37,6 @@ class DriverController extends Controller
     public function update(Request $request, Driver $driver)
     {
         $driver->updateDriver($request->all());
-
         return response()->json($driver,200);
     }
 
@@ -47,3 +46,4 @@ class DriverController extends Controller
         return response()->json('driver deleted',204);
     }
 }
+

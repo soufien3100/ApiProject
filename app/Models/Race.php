@@ -7,11 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Race extends Model
 {
-    use HasFactory;
     protected $primaryKey = 'raceId' ; 
-
     protected $hidden = ['created_at','update_at'] ; 
-
     public function createRace($data) {
         $this->year = $data['year'];
         $this->round = $data['round'];
