@@ -1,18 +1,22 @@
 **Configuration**
 
 *Pour commencer, utiliser la commande*
+
 ```bash
 composer install
 ```
+
 *afin d'avoir certain dossier necessaire au bon fonctionnement de Laravel.*
 
 *Ensuite, lancer la commande*
+
 ```bash
 cp .env.example .env
 ```
+
 *pour avoir un environnementde travaille pour Laravel.*
 
-*Dans le .env nouvellement créer, modifier les lignes*
+*Dans le .env nouvellement créer, modifier la ligne*
 
 *DB_CONNECTION=mysql*
 
@@ -27,3 +31,22 @@ cp .env.example .env
 *par*
 
 *DB_DATABASE='{chemin du projet}/database/database.sqlite'*
+
+**Mise en place de la Base de Donnée**
+
+*Pour mettre en place la base de données, lancer les commandes suivantes :*
+
+```bash
+php artisan migrate
+php artisan db:seed
+```
+
+*Les tables de la base de donnée seront ainsi créer. Enfin, lancer dans un nouveau terminal la commande :*
+
+```bash
+php artisan serve
+```
+
+*afin de lancer un serveur en local.*
+
+*Se connecter au serveur local en utilisant 'localhost' ou l'adresse afficher sur le terminal.*
