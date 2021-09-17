@@ -12,6 +12,8 @@ class Driver extends Model
 
     protected $hidden = ['created_at','update_at'];
 
+    protected $allowedFilteringParameters = ['forename', 'surname'];
+
     public function createDriver($data) {
 
         $driver =new Driver();
